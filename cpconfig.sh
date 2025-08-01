@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#para agregar carpetas que se quieran guardar basta con agregarla al array de abajo
+# este, configs#
 configs=("nvim" "sway" "swaylock" "waybar")
 
 dotfiles_dir="$HOME/dotfiles"
