@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "battery#bat0", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio","memory", "backlight", "battery", "battery#bat0", "clock", "tray", "custom/lock", "custom/power"],
     "wlr/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -71,5 +71,11 @@
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
+    },
+	"memory": {
+        "interval": 30,
+        "format": "RAM: ({percentage}%) SWAP: ({swapPercentage}%)"
+		//{used:0.1f}GiB/{total:0.1f}GiB ({percentage}%) SWAP: {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB ({swapPercentage}%)"
+
     }
 }
