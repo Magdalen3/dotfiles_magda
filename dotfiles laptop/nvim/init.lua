@@ -15,20 +15,22 @@ vim.cmd(":hi statusline guibg=NONE")
 --keymaps
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>o', ':source<CR>')
+vim.keymap.set({ "n", "x" }, "<leader>y", [["+y]]) -- copy to system clipboard
 
 
 --paquetes
 vim.pack.add({
     {src = "https://github.com/neovim/nvim-lsp"},
 	{src = "https://github.com/neovim/nvim-lspconfig"},
-	{src = "https://github.com/vague2k/vague.nvim"},
 	{src = "https://github.com/stevearc/oil.nvim"},
 	{src = "https://github.com/hrsh7th/nvim-cmp"},
 	{src = "https://github.com/hrsh7th/cmp-buffer"},
-	{src = "https://github.com/hrsh7th/cmp-nvim-lsp"}
+	{src = "https://github.com/hrsh7th/cmp-nvim-lsp"},
+	{src = "https://github.com/ibhagwan/smartyank.nvim"}
 })
 
 require "oil".setup()
+require "smartyank".setup()
 --require "cmp".setup()
 vim.lsp.enable({"clangd", "pylsp", "pyright" })
 

@@ -4,7 +4,7 @@
 # este, configs#
 configs=("nvim" "sway" "swaylock" "waybar")
 
-dotfiles_dir="$HOME/dotfiles"
+dotfiles_dir="$HOME/dotfiles netbook/dotfiles laptop"
 if [ ! -d "$dotfiles_dir" ]; then
     mkdir -p "$dotfiles_dir"
     echo "carpeta dotfiles creada en $dotfiles_dir"
