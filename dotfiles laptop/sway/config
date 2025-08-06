@@ -30,7 +30,7 @@ gaps outer 4
 gaps inner 4
 
 #exec_always --no-startup-id 
-exec_always --no-startip-id waybg -i $HOME/Wallpapers/goldenhour.jpg
+exec_always --no-startip-id waybg -i $HOME/Wallpapers/yellow.jpg
 exec_always sway-audio-idle-inhibit
 
 bindsym $mod+Print exec flameshot gui
