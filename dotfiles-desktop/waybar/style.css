@@ -24,20 +24,34 @@ window#waybar {
 #pulseaudio,
 #custom-sunset
 {
-  background-image: linear-gradient(to bottom, #27232b 100%);
 
-  margin: 6px;
-  margin-right: 0px;
   padding: 4px 8px;
-  border-radius: 8px;
+
+  /*background-image: linear-gradient(to bottom, #27232b 100%);*/
+  margin: 2px;
+  margin-right: 0px;
+  
+  border-radius: 19px;
   color: #d8cab8;
 
   border-style: none;
   transition-duration: 120ms;
 }
 
+#custom-sunset:hover {
+background-image: linear-gradient(to bottom, #ac82e9 100%);
+font-weight: bold;
+transition-duration: 120ms;
+}
+
 #clock {
   margin-right: 6px;
+}
+#clock:hover {
+ background-image: linear-gradient(to bottom, #ac82e9 100%);
+  color: #141216;
+  transition-duration: 120ms;
+
 }
 
 #pulseaudio:hover {

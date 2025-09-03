@@ -17,13 +17,11 @@ set $up k
 set $right l
 
 #Aplicaciones por defecto
-
-set $term kitty
+set $term foot
 set $file nemo $HOME
 set $menu wofi
 
 #Distribución de teclado
-
 input * {
 	xkb_layout "latam"
 	}
@@ -31,7 +29,7 @@ exec_always swaymsg input "1386:890:Wacom_One_by_Wacom_S_Pen" map_to_output DVI-
 
 
 
-# Bordeas
+# Bordes
 hide_edge_borders smart_no_gaps
 default_border none 
 default_floating_border pixel 0
@@ -46,6 +44,8 @@ bindsym $mod+Shift+r exec /home/marilyn/SCRIPTS/toggle_refresh.sh
 bindsym $mod+Shift+o exec /home/marilyn/SCRIPTS/tuber.sh
 
 bindsym XF86AudioPlay exec playerctl play-pause
+								
+bindsym $mod+c exec killall -SIGUSR1 waybar 
 
 #bindsym $mod+Print exec flameshot gui
 
