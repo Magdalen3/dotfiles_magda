@@ -10,10 +10,12 @@ output "DVI-D-1" {
     dpms on
 }
 output "DP-2" {
-    mode --custom 1152x864@59.940Hz
+    #mode --custom 1152x864@59.940Hz
+	#75hz -> 16:9 1152 x 648; 16:10 1120x700; 4:3 960 x 720 
+	mode --custom 1120x700@75hz
     pos 1920 165
     transform normal
-    scale 1.0
+    scale 1
     scale_filter nearest
     adaptive_sync off
     dpms on

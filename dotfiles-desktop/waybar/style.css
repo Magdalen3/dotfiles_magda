@@ -1,8 +1,8 @@
 * {
   /* General taskbar font, I like maple mono ^-^*/
-  font-family: Maple Mono;
-  border-radius: 8;
-  font-size: 14px;
+  font-family: lexicaultralegible;
+  border-radius: 0;
+  font-size: 15px;
   padding: 0px;
   background: transparent;
 }
@@ -10,7 +10,7 @@
 window#waybar {
   /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
   background-image: linear-gradient(to bottom, #141216 100%);
-  border-radius: 14px;
+  border-radius: 0px;
   padding: 0px;
   border-style: none;
 }

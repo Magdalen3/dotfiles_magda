@@ -40,53 +40,44 @@ gaps inner 4
 
 #Ejecución de scripts en teclas
 bindsym $mod+Shift+r exec /home/marilyn/SCRIPTS/toggle_refresh.sh
-
 bindsym $mod+Shift+o exec /home/marilyn/SCRIPTS/tuber.sh
-
 bindsym XF86AudioPlay exec playerctl play-pause
-								
 bindsym $mod+c exec killall -SIGUSR1 waybar 
-
-#bindsym $mod+Print exec flameshot gui
 
 # Waybar
 exec_always --no-startup-id $HOME/SCRIPTS/waybar.sh
-
 # Fondo de pantalla
 exec_always --no-startup-id waypaper --restore
-   
-# capture all screens to clipboard    
-#bindsym Shift+Print exec grim - | wl-copy    
-    
-# capture the specified screen area to clipboard (en desuso)   
-bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy    
-    
-# capture the focused monitor to clipboard    
-bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
-    
-    bindsym $mod+Shift+Return exec $file
-	
-    # Start a terminal
-    bindsym $mod+Return exec $term
+#capturas
+	bindsym $mod+Print exec flameshot gui
+	# capture the specified screen area to clipboard 
+	bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy   
+	# capture the focused monitor to clipboard    
+	bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+		
+bindsym $mod+Shift+Return exec $file
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
+# Start a terminal
+bindsym $mod+Return exec $term
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+# Kill focused window
+bindsym $mod+Shift+q kill
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# Start your launcher
+bindsym $mod+d exec $menu
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
