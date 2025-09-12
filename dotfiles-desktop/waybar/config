@@ -8,7 +8,6 @@
   "margin-right": 0,
   "margin-left": 0,
   "modules-left": [
-    "hyprland/workspaces",
     "sway/workspaces"
   ],
   /*"modules-center": [
@@ -16,6 +15,7 @@
   ],*/
   "modules-right": [
     //"network",
+	"temperature",
     "battery",
     "pulseaudio",
     "tray",
@@ -23,11 +23,6 @@
     "clock"
     
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
@@ -44,7 +39,9 @@
   },
   "clock": {
     "timezone": "America/Argentina/Buenos_Aires",
-    "format": "󰅐 {:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"format-alt": "󰅐 {:%d/%m/%Y}",
+    "format": "󰅐  {:%H:%M}",
     "tooltip": false
   },
   "network": {
@@ -85,6 +82,12 @@
       "󱊣"
     ]
     },
+	"temperature": { 
+  		"thermal-zone": 0,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"format": "{temperatureC}°C",
+		"interval": 5
+	},
     "custom/sunset": {
         "interval": "once",
         "tooltip": true,
@@ -92,7 +95,7 @@
         "format" : "{icon}",
         "format-icons": {
             "on": " on" ,
-            "off": " off"
+            "off": "🌙 off"
         },
         "exec": "~/SCRIPTS/sunset.sh",
         "on-click": "exec ~/SCRIPTS/sunset.sh toggle; pkill -RTMIN+6 waybar",

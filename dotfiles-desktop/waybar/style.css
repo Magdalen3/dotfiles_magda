@@ -1,15 +1,21 @@
 * {
   /* General taskbar font, I like maple mono ^-^*/
-  font-family: lexicaultralegible;
+  /* saving that font names for later :*/
+  /*font-family: lexicaultralegible;*/
+  font-family: TerminessNerdFont;
+  font-weight:bold;
   border-radius: 0;
-  font-size: 15px;
+  color: white;
+  font-size: 16px;
   padding: 0px;
   background: transparent;
 }
 
 window#waybar {
-  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-  background-image: linear-gradient(to bottom, #141216 100%);
+  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p 
+  background-image: linear-gradient(to bottom, #141216 100%); 
+  -> NO I DON'T WANT IT ANYMORE*/
+  background-color: black;
   border-radius: 0px;
   padding: 0px;
   border-style: none;
@@ -22,7 +28,8 @@ window#waybar {
 #tray,
 #workspaces,
 #pulseaudio,
-#custom-sunset
+#custom-sunset,
+#temperature
 {
 
   padding: 4px 8px;
@@ -89,28 +96,23 @@ transition-duration: 120ms;
   color: #ac82e9;
   font-weight: bold;
 }
-
 #workspaces button {
-  transition-duration: 100ms;
-  all: initial;
-  min-width: 0;
-  font-weight: bold;
-  color: #d8cab8;
-  margin-right: 0.2cm;
-  margin-left: 0.2cm;
-}
+	font-size: 14px;
+    margin: 0 7px;
+	border:none;
+ }
 
 #workspaces button:hover {
   transition-duration: 120ms;
   color: #8f56e1;
 }
 #workspaces button.focused {
-  color: #ac82e9;
   font-weight: bold;
 }
 #workspaces button.active {
-  color: #ac82e9;
+  color: white;
   font-weight: bold;
+  font-family: inherit;
 }
 #workspaces button.urgent {
   color: #fcb167;

@@ -2,7 +2,7 @@
 
 #para agregar carpetas que se quieran guardar basta con agregarla al array de abajo
 # este, configs#
-configs=("nvim" "sway" "swaylock" "waybar")
+configs=("nvim" "sway" "swaylock" "waybar" "foot")
 
 dotfiles_dir="$HOME/dotfiles_magda"
 if [ ! -d "$dotfiles_dir" ]; then

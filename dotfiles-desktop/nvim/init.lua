@@ -13,11 +13,12 @@ vim.o.signcolumn = "no"
 vim.o.winborder = "rounded"
 --vim.cmd("colorscheme vague") --tema
 vim.cmd(":hi statusline guibg=NONE")
+vim.cmd [[set termguicolors]]
 --keymaps
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>o', ':source<CR>')
 vim.keymap.set({ "n", "x" }, "<leader>y", [["+y]]) -- copy to system clipboard
-
+--hex colors OOTB????
 
 --paquetes
 vim.pack.add({
@@ -27,11 +28,13 @@ vim.pack.add({
 	{src = "https://github.com/hrsh7th/nvim-cmp"},
 	{src = "https://github.com/hrsh7th/cmp-buffer"},
 	{src = "https://github.com/hrsh7th/cmp-nvim-lsp"},
-	{src = "https://github.com/ibhagwan/smartyank.nvim"}
+	{src = "https://github.com/ibhagwan/smartyank.nvim"},
+	{src = "https://github.com/norcalli/nvim-colorizer.lua"}
 })
 
 require "oil".setup()
 require "smartyank".setup()
+require'colorizer'.setup()
 --require "cmp".setup()
 vim.lsp.enable({"clangd", "pylsp", "pyright" })
 

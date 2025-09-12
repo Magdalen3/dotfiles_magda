@@ -33,10 +33,10 @@ exec_always swaymsg input "1386:890:Wacom_One_by_Wacom_S_Pen" map_to_output DVI-
 hide_edge_borders smart_no_gaps
 default_border none 
 default_floating_border pixel 0
-smart_borders on
+smart_borders off
 
-gaps outer 4
-gaps inner 4
+gaps outer 1
+gaps inner 1
 
 #Ejecución de scripts en teclas
 bindsym $mod+Shift+r exec /home/marilyn/SCRIPTS/toggle_refresh.sh
