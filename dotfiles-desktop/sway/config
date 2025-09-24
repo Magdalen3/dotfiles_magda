@@ -48,6 +48,10 @@ bindsym $mod+c exec killall -SIGUSR1 waybar
 exec_always --no-startup-id $HOME/SCRIPTS/waybar.sh
 # Fondo de pantalla
 exec_always --no-startup-id waypaper --restore
+# Equalizer
+exec_always --no-startup-id easyeffects
+for_window [class="EasyEffects"] move to workspace number 10
+exec_always sh -c 'sleep 10 && swaymsg workspace number 1'
 #capturas
 	bindsym $mod+Print exec flameshot gui
 	# capture the specified screen area to clipboard 

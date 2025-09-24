@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 vim.o.wrap = false
 vim.o.signcolumn = "no"
 vim.o.winborder = "rounded"
---vim.cmd("colorscheme vague") --tema
+--vim.cmd("colorscheme catppuccin)
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd [[set termguicolors]]
 --keymaps

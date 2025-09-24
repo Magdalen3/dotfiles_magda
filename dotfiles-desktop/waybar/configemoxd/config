@@ -1,0 +1,106 @@
+{
+  "layer": "bot",
+  "spacing": 0,
+  "height": 0,
+  "margin-bottom": 0,
+  "margin-top": 0,
+  "position": "top",
+  "margin-right": 0,
+  "margin-left": 0,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  /*"modules-center": [
+    "custom/applauncher"
+  ],*/
+  "modules-right": [
+    //"network",
+	"temperature",
+    "battery",
+    "pulseaudio",
+    "tray",
+    "custom/sunset",
+    "clock"
+    
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "America/Argentina/Buenos_Aires",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"format-alt": "󰅐 {:%d/%m/%Y}",
+    "format": "󰅐  {:%H:%M}",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": " {bandwidthDownBits}",
+    "format-ethernet": " {bandwidthDownBits}",
+    "format-disconnected": "󰤮 No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-icons": [
+      "",
+      "",
+      " "
+    ],
+    "nospacing": 1,
+    "format-muted": " ",
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄{capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "󱈑 {capacity}%",
+    "format-icons": [
+      "󱊡",
+      "󱊢",
+      "󱊣"
+    ]
+    },
+	"temperature": { 
+  		"thermal-zone": 0,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"format": "{temperatureC}°C",
+		"interval": 5
+	},
+    "custom/sunset": {
+        "interval": "once",
+        "tooltip": true,
+        "return-type": "json",
+        "format" : "{icon}",
+        "format-icons": {
+            "on": " on" ,
+            "off": "🌙 off"
+        },
+        "exec": "~/SCRIPTS/sunset.sh",
+        "on-click": "exec ~/SCRIPTS/sunset.sh toggle; pkill -RTMIN+6 waybar",
+        "exec-if": "~/SCRIPTS/sunset.sh check",
+        "signal": 6
+    }
+  }
+}
