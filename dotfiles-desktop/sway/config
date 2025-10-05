@@ -49,9 +49,12 @@ exec_always --no-startup-id $HOME/SCRIPTS/waybar.sh
 # Fondo de pantalla
 exec_always --no-startup-id waypaper --restore
 # Equalizer
+assign [class="EasyEffects"] → 10
 exec_always --no-startup-id easyeffects
-for_window [class="EasyEffects"] move to workspace number 10
-exec_always sh -c 'sleep 10 && swaymsg workspace number 1'
+exec_always sh -c 'sleep 2 && swaymsg workspace number 1'
+for_window [app_id="easyeffects"] move to workspace 10
+exec_always sh -c 'sleep 2 && swaymsg workspace number 1'
+
 #capturas
 	bindsym $mod+Print exec flameshot gui
 	# capture the specified screen area to clipboard 
